@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sleep counter</title>
-    <link href="index.css" rel="stylesheet">
+    <title>Kaartjes van Coosje</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Playwrite+AU+QLD:wght@100..400&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+<body>
+    <h1>Kaartjes van Coosje</h1>
 
-<body class="body">
-    <div class="menu">
-        <button type="button" onclick="document.location = 'sleepget\\main.html'">
-            how much sleep am I going to get
-        </button>
+    <nav>
+        <button href="#" onclick="event.preventDefault(); loadPage('producten')">Producten</button>
+        <button href="#" onclick="event.preventDefault(); loadPage('winkelwagentje')">Winkelwagentje</button>
+        <button href="#" onclick="event.preventDefault(); loadPage('over')">Over</button>
+        <button href="#" onclick="event.preventDefault(); loadPage('contact')">Contact</button>
+    </nav>
+    <div id="content">
+        <h2>Welkom!</h2>
+        <p>Bekijk onze mooie kaartjes en laat je inspireren.</p>
     </div>
+    <script src="index.js"></script>
 </body>
-
 </html>
