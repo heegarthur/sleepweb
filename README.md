@@ -1,4 +1,4 @@
-````markdown
+
 # SleepWeb - Sleep Cycle Calculator
 
 SleepWeb is a **web-based sleep calculator** that lets you calculate bedtimes and wake-up times based on 90-minute sleep cycles and an average 15-minute time to fall asleep. It is designed to be simple to use with a **calm, sleep-friendly interface** with no bright colors or distracting elements.
@@ -23,7 +23,7 @@ SleepWeb is a **web-based sleep calculator** that lets you calculate bedtimes an
 1. Clone this repository:
    ```bash
    git clone https://github.com/heegarthur/sleepweb.git
-````
+
 
 2. Open `index.html` in your browser.
 
