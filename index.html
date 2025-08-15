@@ -1,27 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaartjes van Coosje</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Playwrite+AU+QLD:wght@100..400&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sleepweb</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <h1>Kaartjes van Coosje</h1>
+  <header>
+    <h1>Sleep Calculator</h1>
+    <p>Figure out the best times to sleep or wake up based on 90-minute sleep cycles and about 15 minutes to fall asleep.</p>
+  </header>
 
-    <nav>
-        <button href="#" onclick="event.preventDefault(); loadPage('producten')">Producten</button>
-        <button href="#" onclick="event.preventDefault(); loadPage('winkelwagentje')">Winkelwagentje</button>
-        <button href="#" onclick="event.preventDefault(); loadPage('over')">Over</button>
-        <button href="#" onclick="event.preventDefault(); loadPage('contact')">Contact</button>
-    </nav>
-    <div id="content">
-        <h2>Welkom!</h2>
-        <p>Bekijk onze mooie kaartjes en laat je inspireren.</p>
-    </div>
-    <script src="index.js"></script>
+  <main>
+    <section aria-labelledby="mode-title">
+      <div class="radio-wrapper wake">
+        <input type="radio" name="mode" value="wake" checked id="wake-radio">
+        <label for="wake-radio">
+            <svg viewBox="0 0 35.6 35.6">
+            <circle r="17.8" cy="17.8" cx="17.8" class="background"></circle>
+            <circle r="14.37" cy="17.8" cx="17.8" class="stroke"></circle>
+            <circle r="7" cy="17.8" cx="17.8" class="dot"></circle>
+            </svg>
+            <span>I want to wake up at...</span>
+        </label>
+        </div>
+
+        <div class="radio-wrapper sleep">
+        <input type="radio" name="mode" value="sleep" id="sleep-radio">
+        <label for="sleep-radio">
+            <svg viewBox="0 0 35.6 35.6">
+            <circle r="17.8" cy="17.8" cx="17.8" class="background"></circle>
+            <circle r="14.37" cy="17.8" cx="17.8" class="stroke"></circle>
+            <circle r="7" cy="17.8" cx="17.8" class="dot"></circle>
+            </svg>
+            <span>I’m going to bed at...</span>
+        </label>
+         </div>
+
+    </section>
+
+    <section aria-labelledby="input-title">
+      <h2 id="input-title">Enter a Time</h2>
+      <div id="wake-input" role="group" aria-label="Wake Time">
+        <label for="wake-time">Wake Time</label>
+        <input id="wake-time" type="time" step="60">
+        <button id="calc-bedtimes">Show Bedtimes</button>
+      </div>
+
+      <div id="sleep-input" role="group" aria-label="Bedtime" hidden>
+        <label for="sleep-time">Bedtime</label>
+        <input id="sleep-time" type="time" step="60">
+        <button id="calc-waketimes">Show Wake-up Times</button>
+      </div>
+
+      <div>
+        <button id="use-now">Use Current Time</button>
+        <span id="now-label" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section aria-labelledby="age-title">
+      <h2 id="age-title">Sleep Duration Guide (optional)</h2>
+      <p>Recommended sleep ranges by age group. This changes the number of cycles shown by default.</p>
+      <label>
+        <span>Age Group</span>
+        <select id="age-group">
+          <option value="adult" selected>Adult (18+): 7–9 hours</option>
+          <option value="teen">Teen (14–17): 8–10 hours</option>
+          <option value="child">Child (6–13): 9–11 hours</option>
+          <option value="elder">Older Adult (65+): 7–8 hours</option>
+        </select>
+      </label>
+    </section>
+
+    <section aria-labelledby="result-title">
+      <h2 id="result-title">Your Results</h2>
+      <div id="result-note" aria-live="polite"></div>
+      <ol id="results"></ol>
+    </section>
+
+    <section aria-labelledby="info-title">
+      <h2 id="info-title">How It Works</h2>
+      <ul>
+        <li>One sleep cycle lasts about 90 minutes.</li>
+        <li>It usually takes around 15 minutes to fall asleep.</li>
+        <li>Results show 3–6 cycles for shorter sleep, or 4–6 cycles for the recommended range based on age group.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Tip: Aim for a schedule that feels realistic. If you keep waking up early, try one less cycle.</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <noscript>JavaScript is disabled — this sleep calculator won’t work without it.</noscript>
 </body>
 </html>
