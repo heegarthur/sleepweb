@@ -48,9 +48,3 @@ SleepWeb is a **web-based sleep calculator** that lets you calculate bedtimes an
 
 Contributions are welcome! If you want to add new features or improvements, feel free to make a pull request.
 
-## License
-
-This repository is licensed under the MIT License.
-
-```
-```
