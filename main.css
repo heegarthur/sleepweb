@@ -1,0 +1,325 @@
+:root {
+    --bg: #0f1720;
+    --panel: #15202a;
+    --muted: #a3b0b8;
+    --text: #dfe8eb;
+    --accent: #caa77a;
+    --accent-dim: #8f6b4a;
+    --glass: rgba(255, 255, 255, 0.03);
+    --radius: 12px;
+    --shadow: 0 6px 18px rgba(7, 10, 12, 0.6);
+    --focus: 0 0 0 6px rgba(202, 167, 122, 0.08);
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg, var(--bg), #0b1115 60%);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.45;
+    padding: 24px;
+}
+
+header {
+    max-width: 880px;
+    margin: 0 auto 18px;
+    padding: 18px;
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    box-shadow: var(--shadow)
+}
+
+header h1 {
+    margin: 0 0 6px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2px
+}
+
+header p {
+    margin: 0;
+    color: var(--muted)
+}
+
+main {
+    max-width: 880px;
+    margin: 18px auto;
+    padding: 20px;
+    border-radius: var(--radius);
+    background: var(--panel);
+    box-shadow: var(--shadow)
+}
+
+section {
+    margin-bottom: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(0, 0, 0, 0.02));
+}
+
+section h2 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    color: var(--text)
+}
+
+section p {
+    margin: 0 0 8px;
+    color: var(--muted)
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text)
+}
+
+input[type="time"],
+select {
+    background: var(--glass);
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 10px 12px;
+    border-radius: 8px;
+    outline: none;
+    min-width: 150px
+}
+
+button {
+    appearance: none;
+    border: 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-dim));
+    color: #0b0b09;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(11, 9, 7, 0.22);
+}
+
+button:hover {
+    transform: translateY(-2px)
+}
+
+button:active {
+    transform: translateY(0)
+}
+
+#use-now {
+    background: transparent;
+    color: var(--muted);
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.02)
+}
+
+#use-now:hover {
+    color: var(--text);
+    border-color: rgba(255, 255, 255, 0.04)
+}
+
+#results {
+    padding-left: 18px;
+    margin: 8px 0;
+    color: var(--text)
+}
+
+#results li {
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.02)
+}
+
+#result-note {
+    color: var(--muted);
+    margin-bottom: 8px
+}
+
+:focus {
+    outline: none
+}
+
+input:focus,
+select:focus,
+button:focus {
+    box-shadow: var(--focus)
+}
+
+footer {
+    max-width: 880px;
+    margin: 14px auto;
+    color: var(--muted);
+    text-align: center
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important
+    }
+}
+
+@media (max-width:600px) {
+    body {
+        padding: 14px
+    }
+
+    header,
+    main,
+    footer {
+        padding: 12px
+    }
+
+    header h1 {
+        font-size: 1.3rem
+    }
+}
+
+@keyframes slow-breathe {
+    0% {
+        filter: brightness(1)
+    }
+
+    50% {
+        filter: brightness(0.96)
+    }
+
+    100% {
+        filter: brightness(1)
+    }
+}
+
+header {
+    animation: slow-breathe 14s ease-in-out infinite
+}
+
+input:focus,
+button:focus {
+    border-color: rgba(202, 167, 122, 0.25)
+}
+
+.hint {
+    color: var(--muted);
+    font-size: 0.95rem
+}
+
+.checkbox-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.checkbox-wrapper .background {
+    fill: lime;
+    transition: fill 0.6s;
+}
+
+.checkbox-wrapper .stroke {
+    fill: none;
+    stroke: red;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+    stroke-dashoffset: 100;
+    stroke-dasharray: 100;
+    transition: stroke-dashoffset 0.6s;
+}
+
+.checkbox-wrapper .check {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    stroke-dashoffset: 22;
+    stroke-dasharray: 22;
+    transition: stroke-dashoffset 0.6s;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+.checkbox-wrapper input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked+svg .background {
+    fill: black;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked+svg .stroke {
+    stroke-dashoffset: 0;
+}
+
+.checkbox-wrapper.green input[type="checkbox"]:checked+svg .check {
+    stroke-dashoffset: 0;
+}
+
+.radio-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-wrapper input[type="radio"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.radio-wrapper svg {
+    width: 36px;
+    height: 36px;
+    fill: none;
+    stroke-width: 2;
+}
+
+.radio-wrapper .background {
+    fill: rgba(255, 255, 255, 0.02);
+}
+
+.radio-wrapper .stroke {
+    stroke: rgba(255, 255, 255, 0.2);
+}
+
+.radio-wrapper .dot {
+    fill: rgba(202, 167, 122, 0);
+    transition: fill 0.3s ease;
+}
+
+.radio-wrapper input[type="radio"]:checked+label .dot {
+    fill: rgba(202, 167, 122, 0.6);
+}
+
+.radio-wrapper label:hover .stroke {
+    stroke: rgba(202, 167, 122, 0.4);
+}
+
+.radio-wrapper label span {
+    color: var(--text);
+    font-size: 1rem;
+}
