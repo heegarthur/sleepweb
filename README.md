@@ -47,6 +47,17 @@ Or, to run locally:
 * `main.js` - JavaScript logic for calculations and interactions
 * `main.css` - Sleep-friendly, calm styling
 
+---
+
+## 💬 Feature request
+
+Submit any feedback and feature requests: 
+[form](https://docs.google.com/forms/d/e/1FAIpQLSeEaSqr6L2pTQDarLO__wZtefVuemrhMb8RDdX6vQSWNEjZzQ/viewform?usp=header/)
+
+---
+
+
+
 ## Usage
 
 1. Go to the site: [https://heegarthur.github.io/sleepweb/](https://heegarthur.github.io/sleepweb/)
