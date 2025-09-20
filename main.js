@@ -12,10 +12,15 @@ function main() {
     const nowLabel = document.getElementById('now-label');
 
     let ageGroup = localStorage.getItem("age-group");
-    if(ageGroup == null){
-        let ageGroup = document.getElementById("age-group");
-        localStorage.setItem("age-group",ageGroup)
+
+    if (ageGroup == null) {
+        ageGroup = document.getElementById("age-group").value;
+
+        localStorage.setItem("age-group", ageGroup)
+    } else {
+        document.getElementById("age-group").value = ageGroup;
     }
+    ageGroup = document.getElementById("age-group");
 
     function setMode(mode) {
         const isWake = mode === 'wake';
@@ -41,6 +46,16 @@ function main() {
     }
 
     function cyclesForAge() {
+        let ageGroup = localStorage.getItem("age-group").value;
+
+        if (ageGroup == null) {
+            ageGroup = document.getElementById("age-group").value;
+
+            localStorage.setItem("age-group", ageGroup)
+        } else {
+            document.getElementById("age-group").value = ageGroup;
+        }
+        ageGroup = document.getElementById("age-group");
         switch (ageGroup.value) {
             case 'teen':
             case 'child': return [6, 5, 4];
