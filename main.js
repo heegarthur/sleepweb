@@ -10,7 +10,12 @@ function main() {
     const resultNote = document.getElementById('result-note');
     const useNowBtn = document.getElementById('use-now');
     const nowLabel = document.getElementById('now-label');
-    const ageGroup = document.getElementById('age-group');
+
+    let ageGroup = localStorage.getItem("age-group");
+    if(ageGroup == null){
+        let ageGroup = document.getElementById("age-group");
+        localStorage.setItem("age-group",ageGroup)
+    }
 
     function setMode(mode) {
         const isWake = mode === 'wake';
