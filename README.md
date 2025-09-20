@@ -2,7 +2,6 @@
 
 Visit SleepWeb:  https://heegarthur.github.io/sleepweb/
 
-````markdown
 
 
 # SleepWeb - Sleep Cycle Calculator
@@ -37,7 +36,7 @@ Or, to run locally:
 1. Clone this repository:
    ```bash
    git clone https://github.com/heegarthur/sleepweb.git
-````
+
 
 2. Open `index.html` in your browser.
 
